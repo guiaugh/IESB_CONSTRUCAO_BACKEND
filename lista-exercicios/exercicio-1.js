@@ -5,17 +5,12 @@ para média inferior a 7.0.*/
 const prompt = require('prompt-sync')();
 
 
-const nota1 = prompt('Insira a primeira nota: ');
-const nota2 = prompt('Insira a segunda nota: ');
-const nota3 = prompt('Insira a terceira nota: ');
-const nota4 = prompt('Insira a quarta nota: ');
+const nota1 = Number(prompt('Insira a primeira nota: '));
+const nota2 = Number(prompt('Insira a segunda nota: '));
+const nota3 = Number(prompt('Insira a terceira nota: '));
+const nota4 = Number(prompt('Insira a quarta nota: '));
 
-const notaProva1 = Number(nota1);
-const notaProva2 = Number(nota2);
-const notaProva3 = Number(nota3);
-const notaProva4 = Number(nota4);
-
-const media = (notaProva1 + notaProva2 + notaProva3 + notaProva4) / 4;
+const media = (nota1 + nota2 + nota3 + nota4) / 4;
 
 if (media >= 7) {
     console.log('Aprovado! Média: ' + media);
