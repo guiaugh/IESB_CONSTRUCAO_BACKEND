@@ -39,6 +39,19 @@ app.post('/teste', (req, res) => {
     res.send('Teste POST Ok')
 })
 
+app.get('/aluno/:nome/:matricula', (req, res) => {
+    const nome = req.params.nome
+    const matricula = Number(req.params.matricula)
+    res.send('Nome: ' + nome + ' Matricula: ' + matricula)
+})
+
+//Query params Exemplo /pessoa?nome=guilherme&idade=23
+app.get('/pessoa', (req, res) => {
+   console.log(req.query)
+   
+   res.send('Ok')
+})
+
 //executando a aplicacao na porta definida
 app.listen(3000, () => {
     console.log('Api inciada! Rodando em http://localhost:3000')
