@@ -190,14 +190,36 @@ seguindo as regras abaixo:
           Superior a 3.500 | 500 reais
     • Salário a receber do funcionário é igual ao salário líquido mais a gratificação.
 */
-app.get('exercicio9', (req, res) => {
+app.get('/exercicio9', (req, res) => {
     const salarioMinimo = req.body.salarioMinimo
     const horasTrabalhadas = req.body.horasTrabalhadas
     const dependentes = req.body.dependentes
     const horasExtras = req.body.horasExtras
 
-    let salarioBruto
+    
+    let valorHoraTrabalhada = salarioMinimo / 5
+    let salarioMes = (valorHoraTrabalhada * horasTrabalhadas) + (dependentes * 32)
+    let valorHoraExtra = (valorHoraTrabalhada + (valorHoraTrabalhada / 2)) * horasExtras
+    let salarioBruto = salarioMes + valorHoraExtra
     let salarioLiquido
+    let salarioAReceber 
+
+    if(salarioBruto >= 2000 && salarioBruto <= 5000){
+        salarioLiquido = salarioBruto - 10/100
+    } else if(salarioBruto > 5000){
+        salarioLiquido = salarioBruto - 20/100
+    } else {
+        salarioLiquido = salarioBruto
+    }
+
+    if(salarioLiquido <= 3500){
+        salarioAReceber = salarioLiquido + 1000
+    } else {
+        salarioAReceber = salarioLiquido + 500
+    }
+    
+    res.send('Seu salário no mês será: ' + salarioAReceber)
+
     
 })
 
