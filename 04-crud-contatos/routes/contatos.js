@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
 
-let listaContatos = ['Gilberto', 'Arnaldo', 'Diana', 'Marria']
+let listaContatos = []
 
 router.get('/contatos', (req, res) =>{
     res.json(listaContatos)

@@ -1,10 +1,15 @@
 const express = require('express')
+const cors = require('cors')
 const app = express();
 const port = 3000;
 
 const tutorial = require('./routes/tutorial')
 const subrota = require('./routes/subrota')
 const contatos = require('./routes/contatos')
+
+app.use(cors({
+    origin: '*'
+}))
 
 app.use(express.json())
 
