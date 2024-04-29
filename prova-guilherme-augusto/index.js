@@ -2,12 +2,12 @@ const express = require('express')
 const app = express()
 const port = 3000
 
-const produtos = require('./routes/produtos')
+const routerLivros = require('./router/livros')
 
 app.use(express.json())
 
-app.use(produtos)
+app.use(routerLivros)
 
 app.listen(port, () => {
-    console.log('Aplicação Rodando')
+    console.log('Aplicação Rodando!')
 })
