@@ -4,7 +4,9 @@ const router = express.Router()
 const cargoController = require('../controllers/cargoController')
 const funcionarioController = require('../controllers/funcionarioController')
 
-router.post('/cargos', cargoController.create)
+const { cargoValidador } = require('../validators/cargoValidacao')
+
+router.post('/cargos', cargoValidador, cargoController.create)
 router.get('/cargos', cargoController.getAll)
 router.get('/cargos/:id', cargoController.getById)
 router.put('/cargos/:id', cargoController.update)
