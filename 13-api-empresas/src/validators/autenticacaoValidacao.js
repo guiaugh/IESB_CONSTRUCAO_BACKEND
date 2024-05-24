@@ -1,4 +1,7 @@
 const yup = require('yup')
+const jwt = require('jsonwebtoken')
+
+const JWT_SECRET = process.env.JWT_SECRET
 
 const usuarioSchema = yup.object().shape({
     nome: yup
@@ -62,7 +65,23 @@ function loginValidador(req, res, next) {
         })
 }
 
+async function checarToken(req, res, next) {
+
+    try {
+        const authorizationHeader = req.get('Authorization')
+        const separator = authorizationHeader.split(' ')
+        const token = separator[1]
+
+        jwt.verify(token, JWT_SECRET)
+        next()
+    } catch (error) {
+        return res.status(401).json({ mensagem: "Token inválido" })
+    }
+}
+
+
 module.exports = {
     usuarioValidador,
-    loginValidador
+    loginValidador,
+    checarToken
 }

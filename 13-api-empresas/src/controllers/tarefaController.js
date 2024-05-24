@@ -7,7 +7,7 @@ async function create(req, res) {
 }
 
 async function getAll(req, res) {
-    res.json(await Tarefa.find())
+    res.json(await Tarefa.find().populate(['responsavel', 'projeto']))
 }
 
 async function getById(req, res) {

@@ -52,7 +52,7 @@ async function login(req, res) {
         })
     }
 
-    const token = jwt.sign({ email: usuario.email }, JWT_SECRET, { expiresIn: '10m' })
+    const token = jwt.sign({ email: usuario.email }, JWT_SECRET, { expiresIn: '69m' })
 
     res.json({
         mensagem: 'login efetuado com sucesso!',
