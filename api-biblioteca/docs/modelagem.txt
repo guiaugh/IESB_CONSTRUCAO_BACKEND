@@ -1,0 +1,43 @@
+Tabela de Livros:
+
+ID do Livro (Primary Key): Um identificador único para cada livro.
+Título: O título do livro.
+Autor: O autor do livro.
+Editora: A editora que publicou o livro.
+Ano de Publicação: O ano em que o livro foi publicado.
+Gênero: O gênero do livro.
+ISBN: O número de identificação internacional do livro.
+
+Tabela de Membros:
+
+ID do Membro (Primary Key): Um identificador único para cada membro da biblioteca.
+Nome: O nome do membro.
+Endereço: O endereço do membro.
+Email: O endereço de e-mail do membro.
+Data de Inscrição: A data em que o membro se inscreveu na biblioteca.
+Status de Associação: Se o membro está ativo ou inativo.
+
+Tabela de Empréstimos:
+
+ID do Empréstimo (Primary Key): Um identificador único para cada empréstimo.
+ID do Livro (Foreign Key): Uma referência ao livro emprestado.
+ID do Membro (Foreign Key): Uma referência ao membro que pegou emprestado o livro.
+Data de Empréstimo: A data em que o livro foi emprestado.
+Data de Devolução: A data prevista para a devolução do livro.
+Status do Empréstimo: Se o livro foi devolvido ou ainda está emprestado.
+
+Tabela de Multas:
+
+ID da Multa (Primary Key): Um identificador único para cada multa.
+ID do Empréstimo (Foreign Key): Uma referência ao empréstimo associado à multa.
+Valor: O valor da multa.
+Data de Vencimento: A data em que a multa deve ser paga.
+Status da Multa: Se a multa foi paga ou ainda está pendente.
+
+Tabela de Reservas:
+
+ID da Reserva (Primary Key): Um identificador único para cada reserva.
+ID do Livro (Foreign Key): Uma referência ao livro reservado.
+ID do Membro (Foreign Key): Uma referência ao membro que fez a reserva.
+Data da Reserva: A data em que a reserva foi feita.
+Status da Reserva: Se a reserva está ativa, cancelada ou atendida.
