@@ -1,43 +1,39 @@
-Tabela de Livros:
+Doadores:
 
-ID do Livro (Primary Key): Um identificador único para cada livro.
-Título: O título do livro.
-Autor: O autor do livro.
-Editora: A editora que publicou o livro.
-Ano de Publicação: O ano em que o livro foi publicado.
-Gênero: O gênero do livro.
-ISBN: O número de identificação internacional do livro.
+Nome: O nome completo do doador.
+Idade: A idade do doador.
+Tipo Sanguíneo: O tipo sanguíneo do doador (A, B, AB, O) com o fator Rh.
+Última Doação: Data da última doação de sangue realizada pelo doador.
+Telefone: O número de telefone do doador para contato.
 
-Tabela de Membros:
+Doações:
 
-ID do Membro (Primary Key): Um identificador único para cada membro da biblioteca.
-Nome: O nome do membro.
-Endereço: O endereço do membro.
-Email: O endereço de e-mail do membro.
-Data de Inscrição: A data em que o membro se inscreveu na biblioteca.
-Status de Associação: Se o membro está ativo ou inativo.
+Data: A data em que a doação foi feita.
+Quantidade: A quantidade de sangue doado em mililitros.
+Tipo Sanguíneo: O tipo sanguíneo do sangue doado.
+Observações: Qualquer observação relevante relacionada à doação.
+ID do Doador: O ID do doador associado à doação.
 
-Tabela de Empréstimos:
+Estoques:
 
-ID do Empréstimo (Primary Key): Um identificador único para cada empréstimo.
-ID do Livro (Foreign Key): Uma referência ao livro emprestado.
-ID do Membro (Foreign Key): Uma referência ao membro que pegou emprestado o livro.
-Data de Empréstimo: A data em que o livro foi emprestado.
-Data de Devolução: A data prevista para a devolução do livro.
-Status do Empréstimo: Se o livro foi devolvido ou ainda está emprestado.
+Quantidade Disponível: A quantidade disponível de sangue desse tipo no estoque.
+Data de Validade: A data de validade do sangue armazenado.
+Localização: O local físico onde o sangue está armazenado (por exemplo, geladeira, freezer).
+Origem: Origem do sangue (por exemplo, doação direta, banco de sangue).
+Tipo Sanguíneo: O tipo sanguíneo do sangue no estoque.
 
-Tabela de Multas:
+Agendamentos:
 
-ID da Multa (Primary Key): Um identificador único para cada multa.
-ID do Empréstimo (Foreign Key): Uma referência ao empréstimo associado à multa.
-Valor: O valor da multa.
-Data de Vencimento: A data em que a multa deve ser paga.
-Status da Multa: Se a multa foi paga ou ainda está pendente.
+Data e Hora: Data e hora do agendamento da doação de sangue.
+Status: O status do agendamento (confirmado, cancelado, pendente).
+Observações: Qualquer observação relevante relacionada ao agendamento.
+ID do Doador: O ID do doador associado ao agendamento.
+Nome do Doador: O nome do doador associado ao agendamento.
 
-Tabela de Reservas:
+Funcionários:
 
-ID da Reserva (Primary Key): Um identificador único para cada reserva.
-ID do Livro (Foreign Key): Uma referência ao livro reservado.
-ID do Membro (Foreign Key): Uma referência ao membro que fez a reserva.
-Data da Reserva: A data em que a reserva foi feita.
-Status da Reserva: Se a reserva está ativa, cancelada ou atendida.
+Nome: O nome completo do funcionário.
+Cargo: O cargo que o funcionário ocupa no centro de recebimento de sangue.
+Email: O endereço de e-mail do funcionário.
+Telefone: O número de telefone do funcionário para contato.
+Data de Contratação: A data em que o funcionário foi contratado.
