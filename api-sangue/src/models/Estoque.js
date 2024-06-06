@@ -8,15 +8,19 @@ const schema = mongoose.Schema(
         },
         tipo_sanguineo: {
             type: String,
-            required: true
+            require: true
         },
-        observacao: {
+        data_validade: {
+            type: Date,
+            required: false
+        },
+        localizacao: {
             type: String,
             required: false
         },
-        doador: {
+        doacao: {
             type: mongoose.SchemaTypes.ObjectId,
-            ref: 'doador',
+            ref: 'doacao',
             required: true
         }
     },
@@ -25,5 +29,5 @@ const schema = mongoose.Schema(
     }
 )
 
-const Doacao = mongoose.model('doacao', schema)
-module.exports = Doacao
+const Estoque = mongoose.model('estoque', schema)
+module.exports = Estoque

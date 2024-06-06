@@ -4,22 +4,23 @@ const schema = yup.object().shape({
     nome: yup
         .string('campo precisa ser um texto')
         .required('campo obrigatório'),
-    cargo: yup
+    idade: yup
+        .number('campo precisa ser um número')
+        .required('campo obrigatório'),
+    tipo_sanguineo: yup
         .string('campo precisa ser um texto')
         .required('campo obrigatório'),
-    email: yup
-        .string('campo precisa ser um texto')
-        .email('E-mail inválido')
-        .required('campo obrigatório'),
+    ultima_doacao: yup
+        .date('campo precisa ser um Date'),
     telefone: yup
-        .string('campo precisa ser um texto')
-        .required('campo obrigatório'),
-    data_contratacao: yup
-        .date('Data inválida')
-        .required('campo obrigatório'),
+        .string('campo precisa ser válido')
+        .required('campo obrigatório!'),
+    cpf: yup
+        .string('campo precisa ser válido!')
+        .required('campo obrigatório')
 })
 
-function funcionarioValidador(req, res, next) {
+function doadorValidador(req, res, next) {
     schema
         .validate(req.body, { abortEarly: false })
         .then(() => next())
@@ -42,5 +43,5 @@ function funcionarioValidador(req, res, next) {
 }
 
 module.exports = {
-    funcionarioValidador
+    doadorValidador
 }

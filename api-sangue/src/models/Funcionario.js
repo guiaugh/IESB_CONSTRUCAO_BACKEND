@@ -20,6 +20,14 @@ const schema = mongoose.Schema(
         },
         data_contratacao: {
             type: Date,
+            default: Date.now
+        },
+        senha: {
+            type: String,
+            required: true,
+        },
+        cpf: {
+            type: String,
             required: true
         }
     },

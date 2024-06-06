@@ -21,6 +21,10 @@ const schema = mongoose.Schema(
         telefone: {
             type: String,
             required: true
+        },
+        cpf: {
+            type: String,
+            required: true
         }
     },
     {

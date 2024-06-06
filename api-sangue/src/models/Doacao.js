@@ -2,13 +2,12 @@ const mongoose = require('mongoose')
 
 const schema = mongoose.Schema(
     {
-        data_agendamento: {
-            type: Date,
+        quantidade: {
+            type: Number,
             required: true
         },
-        status_agendamento: {
+        tipo_sanguineo: {
             type: String,
-            required: true
         },
         observacao: {
             type: String,
@@ -18,11 +17,6 @@ const schema = mongoose.Schema(
             type: mongoose.SchemaTypes.ObjectId,
             ref: 'doador',
             required: true
-        },
-        responsavel: {
-            type: mongoose.SchemaTypes.ObjectId,
-            ref: 'funcionario',
-            required: true
         }
     },
     {
@@ -30,5 +24,5 @@ const schema = mongoose.Schema(
     }
 )
 
-const Agendamento = mongoose.model('agendamento', schema)
-module.exports = Agendamento
+const Doacao = mongoose.model('doacao', schema)
+module.exports = Doacao
